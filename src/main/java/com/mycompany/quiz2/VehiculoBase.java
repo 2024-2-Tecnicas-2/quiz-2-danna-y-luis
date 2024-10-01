@@ -1,13 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.quiz2;
 
-/**
- *
- * @author USUARIO
- */
-public class VehiculoBase {
+public abstract class VehiculoBase implements Vehiculo {
+
+    String marca;
+    String modelo;
+    int velocidadActual;
+
+
+    public VehiculoBase(String marca, String modelo, int velocidadActual) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidadActual = velocidadActual;
+    }
+
     
+    public void acelerar() {
+        velocidadActual += 10;
+        System.out.println(marca + " " + modelo + " aceleró. Velocidad actual: " + velocidadActual + " km/h.");
+
+    }
+
+    public void frenar() {
+        velocidadActual -= 10;
+        if (velocidadActual < 0) {
+            velocidadActual = 0;
+        }
+        System.out.println(marca + " " + modelo + " frenó. Velocidad actual: " + velocidadActual + " km/h.");
+    }
 }
