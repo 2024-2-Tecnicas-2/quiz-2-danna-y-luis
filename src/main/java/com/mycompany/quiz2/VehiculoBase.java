@@ -14,12 +14,14 @@ public abstract class VehiculoBase implements Vehiculo {
     }
 
     
+    @Override
     public void acelerar() {
         velocidadActual += 10;
         System.out.println(marca + " " + modelo + " aceleró. Velocidad actual: " + velocidadActual + " km/h.");
 
     }
 
+    @Override
     public void frenar() {
         velocidadActual -= 10;
         if (velocidadActual < 0) {
